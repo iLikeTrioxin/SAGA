@@ -1,0 +1,12 @@
+{
+  "name": "saga",
+  "version": "1.0.0",
+  "description": "App created for SAG project.",
+  "main": "main.js",
+  "author": "iLikeTrioxin",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "chart.js": "^3.7.1",
+    "electron": "^18.0.4",
+  }
+}
