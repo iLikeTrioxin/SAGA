@@ -1,18 +1,21 @@
-<input id="espIp" type="url">
-<button id="connect">Connect</button>
+<html>
 
-<script>
+<head>
 
-document.getElementById("connect").addEventListener("onClick", function(){
-    var espIp = document.getElementById("espIp").value;
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
-        }
-    };
-    xmlhttp.open("GET", "http://" + espIp + "/api?method=info", true);
-    xmlhttp.send();
-});
+    <script src="../utils.js"></script>
 
-</script>
+</head>
+
+
+<body>
+
+    <div style="margin-top:10%">
+        <input id="espIp" type="url">
+        <button id="connect">Connect</button>
+    </div>
+
+    <script src="connection.js"></script>
+
+</body>
+
+<html>

@@ -1,81 +1,17 @@
-<canvas id="myChart" width="400" height="400"></canvas>
-<script>
-const chartJS = require("chart.js")
+<html>
 
-const ctx = document.getElementById('myChart').getContext('2d');
-
-const myChart = new chartJS.Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [],
-        datasets: [{
-            label: 'Temp.',
-            borderColor: 'red'
-        },
-        {
-            label: 'RPM',
-            borderColor: 'blue'
-        },
-        {
-            label: 'Heater PWM',
-            borderColor: 'yellow'
-        },
-        {
-            label: 'Target RPM',
-            borderColor: 'green'
-        },
-        {
-            label: 'Target temp',
-            borderColor: 'purple'
-        },
-        {
-            label: 'Pump PWM',
-            borderColor: 'pink'
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-class DataPoint{
-    constructor(time, temp, rpm, heaterPWM, targetRPM, targetTemp, pumpPWM){
-        this.time = time;
-        this.temp = temp;
-        this.rpm = rpm;
-        this.heaterPWM = heaterPWM;
-        this.targetRPM = targetRPM;
-        this.targetTemp = targetTemp;
-        this.pumpPWM = pumpPWM;
-    }
-}
-
-function addDataPoints(dataPoint) {
-    if(myChart.data.labels.length > 30){
-        myChart.data.labels.shift();
-
-        myChart.data.datasets[0].data.shift();
-        myChart.data.datasets[1].data.shift();
-        myChart.data.datasets[2].data.shift();
-        myChart.data.datasets[3].data.shift();
-        myChart.data.datasets[4].data.shift();
-        myChart.data.datasets[5].data.shift();
-    }
-
-    myChart.data.labels.push(parseInt(dataPoint.time / 100));
-
-    myChart.data.datasets[0].data.push(dataPoint.temp);
-    myChart.data.datasets[1].data.push(dataPoint.rpm);
-    myChart.data.datasets[2].data.push(dataPoint.heaterPWM);
-    myChart.data.datasets[3].data.push(dataPoint.targetRPM);
-    myChart.data.datasets[4].data.push(dataPoint.targetTemp);
-    myChart.data.datasets[5].data.push(dataPoint.pumpPWM);
+<head>
     
-    myChart.update();
-}
+    <script src="utils.js"></script>
 
-</script>
+</head>
+
+<body>
+
+  <canvas id="myChart" width="400" height="400"></canvas>
+  
+  <script src="graph.js"></script>
+
+</body>
+
+</html>

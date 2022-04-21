@@ -6,7 +6,9 @@
   "author": "iLikeTrioxin",
   "license": "GPL-3.0",
   "dependencies": {
-    "chart.js": "^3.7.1",
-    "electron": "^18.0.4",
+    "chart.js": "^3.7.1"
+  },
+  "devDependencies": {
+    "electron": "^18.1.0"
   }
 }
